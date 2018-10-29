@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script src="lib/angular.js"></script>
+  <script src="src/app.js"></script>
+  <script src="src/myCtrl.js"></script>
+  <script src="src/myCtrl2.js"></script>
+  <script src="src/userCtrl.js"></script>
+</head>
+
+<body>
+  <div ng-app="app">
+
+    <div ng-controller="userCtrl">
+      <h3>Users</h3>
+
+      <button ng-click="reload()" class="btn btn-danger btn-sm">Reload Data</button>
+
+      <div class="row" ng-repeat="user in users">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              {{user.login}} {{user.type}}
+            </div>
+            <div class="card-body">
+              <img class="img img-thumbnail" src="{{user.avatar_url}}" width="120" height="120" />
+            </div>
+            <div class="card-footer">
+              Site Admin <input type="checkbox" ng-disabled="true" ng-checked="user.site_admin" />
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+
+    <!-- <div ng-co ntroller="myCtrl">
+      <h1>{{name}}</h1>
+
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>Value</th>
+            <th>Index</th>
+            <th>Even</th>
+            <th>Odd</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Middle</th>
+          </tr>
+        <tbody>
+          <tr ng-repeat="item in arr" ng-class="$even?'bg':'bg2'">
+            <td>{{item}}</td>
+            <td>{{$index}}</td>
+            <td>{{$even}}</td>
+            <td>{{$odd}}</td>
+            <td>{{$first}}</td>
+            <td>{{$last}}</td>
+            <td>{{$middle}}</td>
+          </tr>
+        </tbody>
+        </thead>
+      </table>
+
+      <button ng-click="sayHello('Mujeeb')">Click Me</button>
+    </div>
+
+    <div ng-controller="myCtrl2">
+      <div ng-show="user.xyz">This is a div</div>
+      <h1 ng-if="user.xyz">If Directive</h1>
+      <div>
+        <h4 ng-bind="user.login"></h4>
+        <img src="{{user.avatar_url}}" width="120" height="120" />
+      </div>
+    </div> -->
+
+
+
+    <!-- Data binding one way and two way -->
+    <!-- No functions,conditional stmts, loops. Ternary operator -->
+    <!-- <h1>{{1+2}}</h1>
+    <h1>{{'Sheldon ' + 'Cooper'}}</h1>
+
+    <h1>{{false? 'Yes':'No'}}</h1>
+
+    <h1 ng-bind="name"></h1>
+    <input type="text" ng-model="name" />
+
+    <h2>{{name}}</h2>
+    <h2>{{name}}</h2>
+    <h2>{{name}}</h2>
+    <h2>{{name}}</h2>
+    <h2>{{name}}</h2> -->
+  </div>
+</body>
+
+</html>
+<!-- AngularJS, download, setup, ng-app,ng-model,ng-bind {{}} -->
+<!-- Modules -->
