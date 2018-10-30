@@ -4,3 +4,7 @@
 .bg2{
   background-color:#fff;
 }
+
+.navbar-brand,.navbar ul li a{
+  color:#fff !important;
+}

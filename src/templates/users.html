@@ -1,0 +1,20 @@
+<div>
+  <h3>Users</h3>
+  <button ng-click="reload()" class="btn btn-danger btn-sm">Reload Data</button>
+  <div class="row" ng-repeat="user in users">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          {{user.login}} {{user.type}}
+        </div>
+        <div class="card-body">
+          <img class="img img-thumbnail" src="{{user.avatar_url}}" width="120" height="120" />
+        </div>
+        <div class="card-footer">
+          Site Admin <input type="checkbox" ng-disabled="true" ng-checked="user.site_admin" />
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>

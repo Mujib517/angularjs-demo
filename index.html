@@ -10,36 +10,51 @@
   <link rel="stylesheet" href="css/styles.css" />
 
   <script src="lib/angular.js"></script>
+  <script src="lib/angular-route.js"></script>
+  <script src="lib/moment.js"></script>
+
   <script src="src/app.js"></script>
   <script src="src/myCtrl.js"></script>
   <script src="src/myCtrl2.js"></script>
   <script src="src/userCtrl.js"></script>
+  <script src="src/productsCtrl.js"></script>
 </head>
 
 <body>
   <div ng-app="app">
 
-    <div ng-controller="userCtrl">
-      <h3>Users</h3>
+    <header class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#">My App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <button ng-click="reload()" class="btn btn-danger btn-sm">Reload Data</button>
-
-      <div class="row" ng-repeat="user in users">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              {{user.login}} {{user.type}}
-            </div>
-            <div class="card-body">
-              <img class="img img-thumbnail" src="{{user.avatar_url}}" width="120" height="120" />
-            </div>
-            <div class="card-footer">
-              Site Admin <input type="checkbox" ng-disabled="true" ng-checked="user.site_admin" />
-            </div>
-          </div>
-          <br />
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/users">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/contact">Contact</a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <ng-view></ng-view>
     </div>
 
     <!-- <div ng-co ntroller="myCtrl">
