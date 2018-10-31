@@ -8,3 +8,7 @@
 .navbar-brand,.navbar ul li a{
   color:#fff !important;
 }
+a,a:hover{
+  text-decoration: none;
+  color:#000;
+}

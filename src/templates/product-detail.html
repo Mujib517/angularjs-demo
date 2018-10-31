@@ -1,0 +1,14 @@
+<h1>Product Detail</h1>
+
+<div class="col-md-6">
+  <div class="card">
+    <div class="card-header">{{product.brand}} {{product.model}}</div>
+    <div class="card-body">
+      <div>{{product.price | currency}}</div>
+      <div><input type="checkbox" ng-checked="product.inStock" /> InStock</div>
+    </div>
+    <div class="card-footer">
+      {{product.lastUpdated | time}}
+    </div>
+  </div>
+</div>
