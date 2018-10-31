@@ -6,8 +6,4 @@ app.controller('productsCtrl', function ($scope, $http) {
       console.log(res.data.data);
     })
     .catch(function (err) { console.log(err) });
-
-  $scope.getRelativeTime = function (date) {
-    return moment(date).fromNow();
-  }
 });

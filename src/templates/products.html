@@ -9,9 +9,7 @@
     </div>
     <div class="card-footer">
       {{product.lastUpdated | date:'MM-dd-yyyy hh:mm:ss'}}
-      (
-      {{getRelativeTime(product.lastUpdated)}}
-      )
+      ( {{product.lastUpdated | time}} )
     </div>
   </div>
   <br />

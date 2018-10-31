@@ -4,7 +4,7 @@ app.config(function ($routeProvider) {
 
   $routeProvider
     .when('/', {
-      template: '<h1>Home Page!!</h1>'
+      template: '<h1>Home Page</h1>'
     })
     .when('/about', {
       template: '<h1>About Page</h1>'
