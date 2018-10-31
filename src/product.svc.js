@@ -10,4 +10,7 @@ function ProductSvc($http) {
     return $http.get('http://exp-rest-api.herokuapp.com/api/products/' + id);
   }
 
+  this.save = function (product) {
+    return $http.post('http://exp-rest-api.herokuapp.com/api/products', product);
+  }
 }
