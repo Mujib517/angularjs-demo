@@ -8,11 +8,12 @@
         <div>{{product.price | currency}}</div>
         <div><input type="checkbox" ng-disabled="true" ng-checked="product.inStock" /> InStock</div>
       </div>
-      <div class="card-footer">
-        {{product.lastUpdated | date:'MM-dd-yyyy hh:mm:ss'}}
-        ( {{product.lastUpdated | time}} )
-      </div>
     </a>
+    <div class="card-footer">
+      {{product.lastUpdated | date:'MM-dd-yyyy hh:mm:ss'}}
+      ( {{product.lastUpdated | time}} )
+      <button class="btn btn-danger btn-sm" ng-click="onDelete(product._id)">Delete</button>
+    </div>
   </div>
   <br />
 </div>
