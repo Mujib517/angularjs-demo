@@ -12,3 +12,11 @@ a,a:hover{
   text-decoration: none;
   color:#000;
 }
+.loader{
+  border:1px solid #ddd;
+  width:140px;
+  height: 70px;
+  position: relative;
+  top:40%;
+  left:44%;
+}

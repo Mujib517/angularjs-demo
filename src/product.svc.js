@@ -3,7 +3,7 @@ app.service('productSvc', ProductSvc);
 function ProductSvc($http) {
 
   this.get = function () {
-    return $http.get('http://exp-rest-api.herokuapp.com/api/products')
+    return $http.get('http://exp-rest-api.herokuapp.com/api/products1')
   }
 
   this.getById = function (id) {

@@ -1,11 +1,16 @@
 app.controller('productsCtrl', function ($scope, productSvc) {
 
   function init() {
+    $scope.loading = true;
     productSvc.get()
       .then(function (res) {
         $scope.products = res.data.data;
       })
-      .catch(function (err) { console.log(err) });
+      .catch(function (err) {
+      })
+      .finally(function () {
+        $scope.loading = false;
+      });
   }
 
   $scope.onDelete = function (id) {
