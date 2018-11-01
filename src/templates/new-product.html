@@ -1,16 +1,20 @@
 <h1>New Product</h1>
+
 <div class="col-md-5">
+  <div ng-if="success" class="alert alert-success">Successfully Saved!</div>
+  <div ng-if="failed" class="alert alert-danger">Failed to save. Please try again</div>
+
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Brand" ng-model="brand">
+    <input type="text" class="form-control" placeholder="Brand" ng-model="product.brand">
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Model" ng-model="model">
+    <input type="text" class="form-control" placeholder="Model" ng-model="product.model">
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Price" ng-model="price">
+    <input type="text" class="form-control" placeholder="Price" ng-model="product.price">
   </div>
   <div class="form-group">
-    <input type="checkbox" ng-model="inStock"> InStock
+    <input type="checkbox" ng-model="product.inStock"> InStock
   </div>
   <div class="form-group">
     <button class="btn btn-success" ng-click="onSave()">Save Product</button>

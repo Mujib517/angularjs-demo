@@ -2,21 +2,20 @@ app.controller('newProductCtrl', newProductCtrl);
 
 
 function newProductCtrl($scope, productSvc) {
-  $scope.onSave = function () {
-    var product = {
-      brand: $scope.brand,
-      model: $scope.model,
-      price: $scope.price,
-      inStock: $scope.inStock
-    };
 
-    productSvc.save(product)
+  $scope.product = {};
+
+  $scope.onSave = function () {
+    productSvc.save($scope.product)
       .then(function (res) {
-        console.log("Success");
+        $scope.success = true;
+        $scope.failed = false;
+        $scope.product = {};
       })
       .catch(function (err) {
-        console.log(err);
-      })
+        $scope.failed = true;
+        $scope.success = false;
+      });
 
   }
 }
