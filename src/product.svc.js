@@ -1,4 +1,4 @@
-app.service('productSvc', ProductSvc);
+shared.service('productSvc', ProductSvc);
 
 function ProductSvc($http) {
 

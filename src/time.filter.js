@@ -5,4 +5,4 @@ function time() {
   }
 }
 
-app.filter('time', time);
+shared.filter('time', time);
