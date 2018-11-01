@@ -27,100 +27,14 @@
 <body>
   <div ng-app="app">
 
-    <header class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand" href="#">My App</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/users">Users</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/products">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <div ng-include="'/src/templates/header.html'"></div>
 
     <div class="container">
       <ng-view></ng-view>
     </div>
 
-    <!-- <div ng-co ntroller="myCtrl">
-      <h1>{{name}}</h1>
-
-      <table class="table table-hover table-bordered">
-        <thead>
-          <tr>
-            <th>Value</th>
-            <th>Index</th>
-            <th>Even</th>
-            <th>Odd</th>
-            <th>First</th>
-            <th>Last</th>
-            <th>Middle</th>
-          </tr>
-        <tbody>
-          <tr ng-repeat="item in arr" ng-class="$even?'bg':'bg2'">
-            <td>{{item}}</td>
-            <td>{{$index}}</td>
-            <td>{{$even}}</td>
-            <td>{{$odd}}</td>
-            <td>{{$first}}</td>
-            <td>{{$last}}</td>
-            <td>{{$middle}}</td>
-          </tr>
-        </tbody>
-        </thead>
-      </table>
-
-      <button ng-click="sayHello('Mujeeb')">Click Me</button>
-    </div>
-
-    <div ng-controller="myCtrl2">
-      <div ng-show="user.xyz">This is a div</div>
-      <h1 ng-if="user.xyz">If Directive</h1>
-      <div>
-        <h4 ng-bind="user.login"></h4>
-        <img src="{{user.avatar_url}}" width="120" height="120" />
-      </div>
-    </div> -->
-
-
-
-    <!-- Data binding one way and two way -->
-    <!-- No functions,conditional stmts, loops. Ternary operator -->
-    <!-- <h1>{{1+2}}</h1>
-    <h1>{{'Sheldon ' + 'Cooper'}}</h1>
-
-    <h1>{{false? 'Yes':'No'}}</h1>
-
-    <h1 ng-bind="name"></h1>
-    <input type="text" ng-model="name" />
-
-    <h2>{{name}}</h2>
-    <h2>{{name}}</h2>
-    <h2>{{name}}</h2>
-    <h2>{{name}}</h2>
-    <h2>{{name}}</h2> -->
+    <div ng-include="'/src/templates/footer.html'"></div>
   </div>
 </body>
 
 </html>
-<!-- AngularJS, download, setup, ng-app,ng-model,ng-bind {{}} -->
-<!-- Modules -->
