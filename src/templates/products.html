@@ -1,12 +1,14 @@
-<h1>Products</h1>
-<a href="#!/products/new" class="btn btn-success">Add New Product</a>
 <div ng-if="loading" class="loader">
   <img src="../../imgs/loading.gif" />
   Loading
 </div>
 
-<div class="col-md-6" ng-repeat="product in products">
-  <my-product product="product" on-notify-delete="onNotificationReceived()"></my-product>
+<div ng-if="!loading">
+  <h1>Products</h1>
+  <a href="#!/products/new" class="btn btn-success">Add New Product</a>
+  <div class="col-md-6" ng-repeat="product in products">
+    <my-product product="product" on-notify-delete="onNotificationReceived()"></my-product>
+  </div>
 </div>
 
 <!-- Filters: uppercase, lowercase, currency, date, titleCase -->
