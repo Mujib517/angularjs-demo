@@ -13,14 +13,9 @@ app.controller('productsCtrl', function ($scope, productSvc) {
       });
   }
 
-  $scope.onDelete = function (id) {
-    productSvc.delete(id)
-      .then(function (res) {
-        init();
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
+  $scope.onNotificationReceived = function () {
+    console.log("Notification received");
+    init();
   }
 
   init();
