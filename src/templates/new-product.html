@@ -1,22 +1,53 @@
 <h1>New Product</h1>
 
-<div class="col-md-5">
-  <div ng-if="success" class="alert alert-success">Successfully Saved!</div>
-  <div ng-if="failed" class="alert alert-danger">Failed to save. Please try again</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Valid</th>
+      <th>Invalid</th>
+      <th>Dirty</th>
+      <th>Pristine</th>
+      <th>Error</th>
+    </tr>
+    <tbody>
+      <tr>
+        <td>Brand</td>
+        <td>{{frm.brand.$valid}}</td>
+        <td>{{frm.brand.$invalid}}</td>
+        <td>{{frm.brand.$dirty}}</td>
+        <td>{{frm.brand.$pristine}}</td>
+        <td>{{frm.brand.$error}}</td>
+      </tr>
+    </tbody>
+  </thead>
+</table>
 
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Brand" ng-model="product.brand">
+<!-- required,minlength,maxlength, pattern -->
+<ng-form name="frm">
+  <div class="col-md-5">
+    <div ng-if="success" class="alert alert-success">Successfully Saved!</div>
+    <div ng-if="failed" class="alert alert-danger">Failed to save. Please try again</div>
+
+    <div class="form-group">
+      <input name="brand" type="text" minlength="3" maxlength="10" required class="form-control" placeholder="Brand" ng-model="product.brand">
+      <span class="text-danger" ng-if="frm.brand.$dirty && frm.brand.$error.required">Required</span>
+      <span class="text-danger" ng-if="frm.brand.$dirty && frm.brand.$error.minlength">Min 3 Chars</span>
+      <span class="text-danger" ng-if="frm.brand.$dirty && frm.brand.$error.maxlength">Max 10 Chars</span>
+    </div>
+    <div class="form-group">
+      <input name="model" type="text" required class="form-control" placeholder="Model" ng-model="product.model">
+      <span class="text-danger" ng-if="frm.model.$dirty && frm.model.$invalid">Required</span>
+    </div>
+    <div class="form-group">
+      <input name="price" type="text" required class="form-control" placeholder="Price" ng-model="product.price">
+      <span class="text-danger" ng-if="frm.price.$dirty && frm.price.$invalid">Required</span>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" ng-model="product.inStock"> InStock
+    </div>
+    <div class="form-group">
+      <button ng-disabled="frm.$invalid" class="btn btn-success" ng-click="onSave()">Save Product</button>
+    </div>
   </div>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Model" ng-model="product.model">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Price" ng-model="product.price">
-  </div>
-  <div class="form-group">
-    <input type="checkbox" ng-model="product.inStock"> InStock
-  </div>
-  <div class="form-group">
-    <button class="btn btn-success" ng-click="onSave()">Save Product</button>
-  </div>
-</div>
+</ng-form>
