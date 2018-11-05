@@ -5,11 +5,7 @@ app.directive('reviewList', function () {
     <h3 ng-if="reviews && reviews.length>0">Reviews</h3>
     <h3 ng-if="!reviews || reviews.length===0">Be the first one to review</h3>
     <div ng-repeat="review in reviews">
-      <h3>{{review.name}}</h3>
-      <b>{{review.subject}} <span class="badge badge-success">{{review.rating}} *</span></b>
-      <p>{{review.message}}</p>
-      <div>{{review.lastUpdated | time}}</div>
-      <hr />
+       <product-review review="review"></product-review>
     </div>
   </div>`,
     restrict: 'E', //AECM

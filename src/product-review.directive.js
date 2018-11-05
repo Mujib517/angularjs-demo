@@ -1,0 +1,15 @@
+app.directive('productReview', function () {
+
+  return {
+    template:` <h3>{{review.name}}</h3>
+    <b>{{review.subject}} <span class="badge badge-success">{{review.rating}} *</span></b>
+    <p>{{review.message}}</p>
+    <div>{{review.lastUpdated | time}}</div>
+    <hr />`,
+    restrict:'E',
+    scope:{
+      review:'='
+    }
+  }
+
+});
