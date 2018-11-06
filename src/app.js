@@ -21,7 +21,9 @@ app.controller('homeCtrl', function ($scope) {
 
 });
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider,$httpProvider) {
+
+  $httpProvider.interceptors.push('productInterceptor');
 
   $routeProvider
     .when('/', {
