@@ -1,8 +1,12 @@
 app.factory('productInterceptor', function () {
 
+  var url = "http://exp-rest-api.herokuapp.com/";
+
   return {
     request: function (req) {
       req.headers.customHeader = "abc";
+      if (req.url.indexOf("api") > -1)
+        req.url = url + req.url;
       return req;
     },
 
