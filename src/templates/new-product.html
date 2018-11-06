@@ -8,6 +8,7 @@
       <th>Invalid</th>
       <th>Dirty</th>
       <th>Pristine</th>
+      <th>Touched</th>
       <th>Error</th>
     </tr>
     <tbody>
@@ -17,6 +18,7 @@
         <td>{{frm.brand.$invalid}}</td>
         <td>{{frm.brand.$dirty}}</td>
         <td>{{frm.brand.$pristine}}</td>
+        <td>{{frm.brand.$touched}}</td>
         <td>{{frm.brand.$error}}</td>
       </tr>
     </tbody>
@@ -31,21 +33,27 @@
 
     <div class="form-group">
       <input name="brand" type="text" minlength="3" maxlength="10" required class="form-control" placeholder="Brand" ng-model="product.brand">
-      <span class="text-danger" ng-if="frm.brand.$dirty && frm.brand.$error.required">Required</span>
-      <span class="text-danger" ng-if="frm.brand.$dirty && frm.brand.$error.minlength">Min 3 Chars</span>
-      <span class="text-danger" ng-if="frm.brand.$dirty && frm.brand.$error.maxlength">Max 10 Chars</span>
+      <span class="text-danger" ng-if="frm.brand.$touched && frm.brand.$error.required">Required</span>
+      <span class="text-danger" ng-if="frm.brand.$touched && frm.brand.$error.minlength">Min 3 Chars</span>
+      <span class="text-danger" ng-if="frm.brand.$touched && frm.brand.$error.maxlength">Max 10 Chars</span>
     </div>
     <div class="form-group">
       <input name="model" type="text" required class="form-control" placeholder="Model" ng-model="product.model">
-      <span class="text-danger" ng-if="frm.model.$dirty && frm.model.$invalid">Required</span>
+      <span class="text-danger" ng-if="frm.model.$touched && frm.model.$invalid">Required</span>
     </div>
     <div class="form-group">
       <input name="price" type="text" required class="form-control" placeholder="Price" ng-model="product.price">
-      <span class="text-danger" ng-if="frm.price.$dirty && frm.price.$invalid">Required</span>
+      <span class="text-danger" ng-if="frm.price.$touched && frm.price.$invalid">Required</span>
+    </div>
+    <div class="form-group">
+      <!-- 123-456-7890 -->
+      <input name="phone" type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="Phone" ng-model="product.phone">
+      <span class="text-danger" ng-show="frm.phone.$invalid">Invalid Phone</span>
     </div>
     <div class="form-group">
       <input type="checkbox" ng-model="product.inStock"> InStock
     </div>
+ 
     <div class="form-group">
       <button ng-disabled="frm.$invalid" class="btn btn-success" ng-click="onSave()">Save Product</button>
     </div>
