@@ -1,15 +1,11 @@
 app.directive('productReview', function () {
 
   return {
-    template:` <h3>{{review.name}}</h3>
-    <b>{{review.subject}} <span class="badge badge-success">{{review.rating}} *</span></b>
-    <p>{{review.message}}</p>
-    <div>{{review.lastUpdated | time}}</div>
-    <hr />`,
+    templateUrl:'/src/templates/product-review.html',
     restrict:'E',
     scope:{
       review:'='
     }
-  }
+  };
 
 });

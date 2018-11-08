@@ -17,7 +17,7 @@ app.controller('homeCtrl', function ($scope) {
 
   $scope.onAddrSaveClick = function () {
     console.log("Home Ctrl", "Save Clicked");
-  }
+  };
 
 });
 
@@ -27,8 +27,7 @@ app.config(function ($routeProvider,$httpProvider) {
 
   $routeProvider
     .when('/', {
-      template: `<h1>Home Page</h1> 
-                  <my-address address="addr" on-addr-save="onAddrSaveClick()"></my-address>`,
+      template: '<h1>Home Page</h1>',
       controller: 'homeCtrl'
     })
     .when('/about', {

@@ -23,5 +23,5 @@ app.factory('productInterceptor', function () {
     responseError: function (err) {
       return err.statusText;
     }
-  }
+  };
 });

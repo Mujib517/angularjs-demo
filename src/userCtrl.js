@@ -18,7 +18,7 @@ function userCtrl($scope, $http) {
 
   $scope.reload = function () {
     get();
-  }
+  };
 }
 
 

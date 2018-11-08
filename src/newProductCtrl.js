@@ -17,5 +17,5 @@ function newProductCtrl($scope, productSvc) {
         $scope.success = false;
       });
 
-  }
+  };
 }

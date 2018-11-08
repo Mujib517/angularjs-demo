@@ -4,7 +4,7 @@ function myCtrlFun($scope) {
 
   $scope.sayHello = function (val) {
     alert("Hi " + val);
-  }
+  };
 
   $scope.arr = ["one","two","abc","xyz"];
 }

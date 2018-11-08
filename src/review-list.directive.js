@@ -1,16 +1,10 @@
 app.directive('reviewList', function () {
 
   return {
-    template: `<div>
-    <h3 ng-if="reviews && reviews.length>0">Reviews</h3>
-    <h3 ng-if="!reviews || reviews.length===0">Be the first one to review</h3>
-    <div ng-repeat="review in reviews">
-       <product-review review="review"></product-review>
-    </div>
-  </div>`,
+    templateUrl:'/src/templates/review-list.html',
     restrict: 'E', //AECM
     scope: {
       reviews: '='
     }
-  }
+  };
 });

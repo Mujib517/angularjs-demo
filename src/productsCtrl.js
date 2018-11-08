@@ -16,7 +16,7 @@ app.controller('productsCtrl', function ($scope, productSvc) {
   $scope.onNotificationReceived = function () {
     console.log("Notification received");
     init();
-  }
+  };
 
   init();
 });
