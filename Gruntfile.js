@@ -1,3 +1,4 @@
+//gulp, webpack, parcel
 module.exports = function (grunt) {
   grunt.initConfig({
 
@@ -7,7 +8,8 @@ module.exports = function (grunt) {
       },
       my_target: {
         files: {
-          'dist/app.min.js': ['dist/app.js']
+          'dist/app.min.js': ['dist/app.js'],
+          'dist/shared.min.js':['dist/shared.js']
         }
       }
     },
