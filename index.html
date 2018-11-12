@@ -58,19 +58,20 @@
   <script>
     var cvs = document.getElementById('cvs');
     var ctx = cvs.getContext('2d');
+    var x = 100;
+    var y = 100;
 
-    ctx.fillText("Hello Canvas", 10, 10);
-    ctx.strokeText("Hello Canvas", 50, 50);
-
+    for (var i = 0; i < 100; i++) {
+      x = Math.random() * 200;
+      y = Math.random() * 200;
+      ctx.arc(x, y, 25, 0, Math.PI * 2);
+    }
+    // ctx.fillStyle="#0095DD";
     ctx.strokeStyle="red";
-    ctx.fillStyle="#0095DD";
-
-    ctx.rect(100, 100, 150, 120);
-    ctx.fill();
+    // ctx.fill();
     ctx.stroke();
-    // ctx.arc(100, 100, 50, 0, Math.PI * 2);
-    // ctx.strokeStyle = "#0095DD";
-    // ctx.stroke();
+
+
   </script>
 
 
