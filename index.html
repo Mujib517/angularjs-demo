@@ -13,9 +13,9 @@
   <script src="lib/angular-route.js"></script>
   <script src="lib/moment.js"></script>
 
-<!-- development -->
-<!-- <script src="dist/app.js"></script> -->
-<!-- IIS, Apache, Tomcat -->
+  <!-- development -->
+  <!-- <script src="dist/app.js"></script> -->
+  <!-- IIS, Apache, Tomcat -->
   <script src="dist/app.min.js"></script>
   <script src="dist/shared.min.js"></script>
 
@@ -37,10 +37,39 @@
   <script src="src/time.filter.js"></script>
   <script src="src/product.svc.js"></script> -->
 
+  <style>
+    canvas {
+      border: 1px solid gray;
+    }
+  </style>
+
+
 </head>
 
 <body>
-  <div ng-app="app">
+
+
+  <canvas id="cvs" width="500" height="500">
+
+  </canvas>
+
+
+
+  <script>
+    var cvs = document.getElementById('cvs');
+    var ctx = cvs.getContext('2d');
+    ctx.strokeStyle="rgba(100,120,0,1)";
+    ctx.moveTo(50,50);
+    ctx.lineTo(100, 200);
+    ctx.lineTo(200, 200);
+    ctx.lineTo(200, 300);
+    ctx.lineTo(330, 380);
+    ctx.stroke();
+  </script>
+
+
+
+  <!-- <div ng-app="app">
 
     <div ng-include="'/src/templates/header.html'"></div>
 
@@ -49,7 +78,8 @@
     </div>
 
     <div ng-include="'/src/templates/footer.html'"></div>
-  </div>
+  </div> -->
+
 </body>
 
 </html>
