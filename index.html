@@ -48,32 +48,10 @@
 
 <body>
 
-
-  <canvas id="cvs" width="500" height="500">
-
+  <canvas id="cvs" width="650" height="500">
   </canvas>
 
-
-
-  <script>
-    var cvs = document.getElementById('cvs');
-    var ctx = cvs.getContext('2d');
-    var x = 100;
-    var y = 100;
-
-    for (var i = 0; i < 100; i++) {
-      x = Math.random() * 200;
-      y = Math.random() * 200;
-      ctx.arc(x, y, 25, 0, Math.PI * 2);
-    }
-    // ctx.fillStyle="#0095DD";
-    ctx.strokeStyle="red";
-    // ctx.fill();
-    ctx.stroke();
-
-
-  </script>
-
+  <script src="scripts.js"></script>
 
 
   <!-- <div ng-app="app">
