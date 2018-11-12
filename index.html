@@ -58,13 +58,19 @@
   <script>
     var cvs = document.getElementById('cvs');
     var ctx = cvs.getContext('2d');
-    ctx.strokeStyle="rgba(100,120,0,1)";
-    ctx.moveTo(50,50);
-    ctx.lineTo(100, 200);
-    ctx.lineTo(200, 200);
-    ctx.lineTo(200, 300);
-    ctx.lineTo(330, 380);
+
+    ctx.fillText("Hello Canvas", 10, 10);
+    ctx.strokeText("Hello Canvas", 50, 50);
+
+    ctx.strokeStyle="red";
+    ctx.fillStyle="#0095DD";
+
+    ctx.rect(100, 100, 150, 120);
+    ctx.fill();
     ctx.stroke();
+    // ctx.arc(100, 100, 50, 0, Math.PI * 2);
+    // ctx.strokeStyle = "#0095DD";
+    // ctx.stroke();
   </script>
 
 
